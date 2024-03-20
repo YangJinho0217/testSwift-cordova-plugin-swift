@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="testSwift" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>testSwift</name>
+    <description>swift Native Code Test</description>
+    <license>MIT</license>
+    <keyword>cordova,echo</keyword>
+    <js-module name="testSwift" src="www/testSwift.js">
+        <clobbers target="cordova.plugins.testSwift" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="testSwift">
+                <param name="ios-package" value="testSwift" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/testSwift.swift" />
+        <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
+    </platform>
+</plugin>
